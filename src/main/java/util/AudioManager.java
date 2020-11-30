@@ -20,7 +20,7 @@ public class AudioManager {
       // other formats might not work
 
       // https://stackoverflow.com/a/11001150 for why using File
-      File soundFile = new File("resources/" + fileName + ".wav");
+      File soundFile = new File("res/sound/" + fileName + ".wav");
       Clip clip = AudioSystem.getClip(); // get a sound clip resourse
       AudioInputStream inputStream = AudioSystem.getAudioInputStream(soundFile); // open an audio input stream
 

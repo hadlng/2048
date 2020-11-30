@@ -13,7 +13,7 @@ public class Main {
 
     JFrame window = new JFrame("HAI KHÔNG BỐN TÁM");
     window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    window.setIconImage(ImageIO.read(new File("resources/2048.gif"))); // https://stackoverflow.com/a/18455062
+    window.setIconImage(ImageIO.read(new File("res/drawable/2048.gif"))); // https://stackoverflow.com/a/18455062
 
     window.add(game);
     window.pack();
