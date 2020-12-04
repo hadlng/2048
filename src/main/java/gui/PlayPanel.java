@@ -13,6 +13,7 @@ import javax.imageio.ImageIO;
 import main.java.game.Game;
 import main.java.game.GameBoard;
 import main.java.game.ScoreManager;
+import main.java.util.AudioManager;
 import main.java.util.DrawUtils;
 
 @SuppressWarnings("serial")
@@ -32,6 +33,8 @@ public class PlayPanel extends Panel {
   private Button screenshotButton;
   private Button mainMenuButton;
 
+  private AudioManager audio;
+
   private final int MARGIN = GameBoard.MARGIN;
   private final int SM_BUTTON_WIDTH = 200;
   private final int LG_BUTTON_WIDTH = SM_BUTTON_WIDTH * 2 + MARGIN;
@@ -45,6 +48,7 @@ public class PlayPanel extends Panel {
     board = new GameBoard((Game.WIDTH - GameBoard.BOARD_WIDTH) / 2, Game.HEIGHT - GameBoard.BOARD_HEIGHT - MARGIN * 2);
     scores = board.getScores();
     stats = new BufferedImage(Game.WIDTH, 200, BufferedImage.TYPE_INT_RGB);
+    audio = new AudioManager();
 
     pauseButton = new Button(Game.WIDTH - MARGIN * 2 - 60, 30, 60, 60);
     pauseButton.addActionListener(new ActionListener() {
@@ -189,6 +193,7 @@ public class PlayPanel extends Panel {
     if (board.isDead()) {
       if (!addedGameOver) {
         addedGameOver = true;
+        audio.play("game-over", 0);
 
         add(mainMenuButton);
         add(resetButton);
