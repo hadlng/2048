@@ -56,7 +56,7 @@ public class PlayPanel extends Panel {
       public void actionPerformed(ActionEvent e) {
         board.setPaused(true);
 
-        if (board.getPauseTime() == 0) {
+        if (board.getPauseTime() == 0 && board.hasStarted()) {
           board.setPauseTime(System.nanoTime());
         }
       }
@@ -202,7 +202,7 @@ public class PlayPanel extends Panel {
       drawGameOver(g);
     }
 
-    if (board.isPaused()) {
+    if (board.isPaused() && !board.isDead()) {
       if (!addedPaused) {
         addedPaused = true;
 
