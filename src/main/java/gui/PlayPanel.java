@@ -15,6 +15,7 @@ import main.java.game.GameBoard;
 import main.java.game.ScoreManager;
 import main.java.util.AudioManager;
 import main.java.util.DrawUtils;
+import main.java.util.Toast;
 
 @SuppressWarnings("serial")
 public class PlayPanel extends Panel {
@@ -162,9 +163,9 @@ public class PlayPanel extends Panel {
   public void update() {
     board.update();
     if (board.isDead() || board.isPaused()) {
-      alpha++;
-      if (alpha > 170) {
-        alpha = 170;
+      alpha += 10;
+      if (alpha > 200) {
+        alpha = 200;
       }
     }
   }
@@ -182,12 +183,17 @@ public class PlayPanel extends Panel {
       drawGUI(g2d);
       board.render(g2d);
       try {
-        ImageIO.write(bi, "jpg", new File("screenshot" + System.nanoTime() + ".jpg"));
+        // https://stackoverflow.com/questions/6142901/how-to-create-a-file-in-a-directory-in-java
+        File f = new File("screenshots/screenshot" + System.nanoTime() + ".jpg");
+        f.getParentFile().mkdir();
+        ImageIO.write(bi, "jpg", f);
       } catch (Exception ex) {
         ex.printStackTrace();
       }
       screenshot = false;
-      
+      String message = "Chụp màn hình thành công\nẢnh được lưu trong folder `screenshots`";
+      Toast toast = new Toast(message, Game.WIDTH + 250, Game.HEIGHT - 20);
+      toast.showToast();
     }
 
     if (board.isDead()) {
