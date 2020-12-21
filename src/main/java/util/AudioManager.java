@@ -1,6 +1,7 @@
 package util;
 
-import java.io.File;
+import java.io.BufferedInputStream;
+import java.io.InputStream;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -20,9 +21,11 @@ public class AudioManager {
       // other formats might not work
 
       // https://stackoverflow.com/a/11001150 for why using File
-      File soundFile = new File("res/sound/" + fileName + ".wav");
+      // File soundFile = new File("src/main/resources/sound/" + fileName + ".wav");
+      InputStream is = AudioManager.class.getResourceAsStream("/sounds/" + fileName + ".wav");
+      AudioInputStream inputStream = AudioSystem.getAudioInputStream(new BufferedInputStream(is));
       Clip clip = AudioSystem.getClip(); // get a sound clip resourse
-      AudioInputStream inputStream = AudioSystem.getAudioInputStream(soundFile); // open an audio input stream
+      // AudioInputStream inputStream = AudioSystem.getAudioInputStream(soundFile); // open an audio input stream
 
       // prevent clip from being blocked https://stackoverflow.com/a/17277981
       // not using clip.drain() because it will freeze the UI
