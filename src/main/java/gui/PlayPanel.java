@@ -1,4 +1,4 @@
-package main.java.gui;
+package gui;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -10,12 +10,12 @@ import java.io.File;
 
 import javax.imageio.ImageIO;
 
-import main.java.game.Game;
-import main.java.game.GameBoard;
-import main.java.game.ScoreManager;
-import main.java.util.AudioManager;
-import main.java.util.DrawUtils;
-import main.java.util.Toast;
+import game.Game;
+import game.GameBoard;
+import game.ScoreManager;
+import util.AudioManager;
+import util.DrawUtils;
+import util.Toast;
 
 @SuppressWarnings("serial")
 public class PlayPanel extends Panel {

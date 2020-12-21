@@ -1,4 +1,4 @@
-package main.java.game;
+package game;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -13,10 +13,10 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
-import main.java.gui.LeaderboardPanel;
-import main.java.gui.MainMenuPanel;
-import main.java.gui.PlayPanel;
-import main.java.gui.Screen;
+import gui.LeaderboardPanel;
+import gui.MainMenuPanel;
+import gui.PlayPanel;
+import gui.Screen;
 
 @SuppressWarnings("serial")
 public class Game extends JPanel implements Runnable, KeyListener, MouseListener, MouseMotionListener {

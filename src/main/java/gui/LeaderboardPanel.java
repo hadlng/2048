@@ -1,4 +1,4 @@
-package main.java.gui;
+package gui;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -7,9 +7,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import main.java.game.Game;
-import main.java.game.Leaderboard;
-import main.java.util.DrawUtils;
+import game.Game;
+import game.Leaderboard;
+import util.DrawUtils;
 
 @SuppressWarnings("serial")
 public class LeaderboardPanel extends Panel {

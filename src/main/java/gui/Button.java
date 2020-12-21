@@ -1,4 +1,4 @@
-package main.java.gui;
+package gui;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 
-import main.java.game.Game;
-import main.java.util.AudioManager;
-import main.java.util.DrawUtils;
+import game.Game;
+import util.AudioManager;
+import util.DrawUtils;
 
 @SuppressWarnings("serial")
 public class Button extends JButton {

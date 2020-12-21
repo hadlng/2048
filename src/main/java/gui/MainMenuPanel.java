@@ -1,4 +1,4 @@
-package main.java.gui;
+package gui;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -6,8 +6,8 @@ import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import main.java.game.Game;
-import main.java.util.DrawUtils;
+import game.Game;
+import util.DrawUtils;
 
 @SuppressWarnings("serial")
 public class MainMenuPanel extends Panel {

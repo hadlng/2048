@@ -1,4 +1,4 @@
-package main.java.util;
+package util;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JWindow;
 
-import main.java.game.Game;
+import game.Game;
 
 @SuppressWarnings("serial")
 public class Toast extends JFrame {

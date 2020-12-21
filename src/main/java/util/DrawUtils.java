@@ -1,4 +1,4 @@
-package main.java.util;
+package util;
 
 import java.awt.Canvas;
 import java.awt.Font;

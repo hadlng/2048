@@ -1,11 +1,11 @@
-package main.java.game;
+package game;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import main.java.util.DrawUtils;
+import util.DrawUtils;
 
 public class Tile {
 

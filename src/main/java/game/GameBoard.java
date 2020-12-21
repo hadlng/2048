@@ -1,4 +1,4 @@
-package main.java.game;
+package game;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -6,7 +6,7 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
-import main.java.util.AudioManager;
+import util.AudioManager;
 
 public class GameBoard {
 

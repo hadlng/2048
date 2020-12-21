@@ -1,4 +1,4 @@
-package main.java.util;
+package util;
 
 import java.io.File;
 
@@ -8,7 +8,7 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineEvent;
 import javax.sound.sampled.LineListener;
 
-import main.java.game.GameBoard;
+import game.GameBoard;
 
 public class AudioManager {
 
