@@ -80,7 +80,7 @@ public class Button extends JButton {
         al.actionPerformed(null); 
       }
       
-      audio.play("button-select", 0);
+      audio.play("click", 0);
     }
     currentState = State.RELEASED;
   }

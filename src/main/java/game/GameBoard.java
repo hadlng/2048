@@ -60,7 +60,7 @@ public class GameBoard {
 
     createBoardImage();
 
-    audio.play("8-bit-nes", -1);
+    audio.play("bgm", -1);
     lBoard = Leaderboard.getInstance();
     lBoard.loadScores();
     scores = new ScoreManager(this);
@@ -383,7 +383,7 @@ public class GameBoard {
 
     if (canMove) {
       // play sound
-      audio.play("water-click", 0);
+      audio.play("merge", 0);
       spawnRandomly();
       setDead(checkDead());
     }
