@@ -29,7 +29,6 @@ public class PlayPanel extends Panel {
   private String timeF; // formatted string
   
   private Button pauseButton;
-  private Button resumeButton;
   private Button resetButton;
   private Button screenshotButton;
   private Button mainMenuButton;
@@ -55,10 +54,31 @@ public class PlayPanel extends Panel {
     pauseButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        board.setPaused(true);
+        if (!board.isPaused() && !board.isDead()) {
+          board.setPaused(true);
+  
+          if (board.getPauseTime() == 0 && board.hasStarted()) {
+            board.setPauseTime(System.nanoTime());
+          }
 
-        if (board.getPauseTime() == 0 && board.hasStarted()) {
-          board.setPauseTime(System.nanoTime());
+          pauseButton.setText("X");
+        } else if (board.isPaused() && !board.isDead()) {
+          board.setPaused(false);
+          alpha = 0;
+
+          remove(resetButton);
+          remove(screenshotButton);
+          remove(mainMenuButton);
+
+          if (board.getPauseTime() != 0) {
+            long stopTime = System.nanoTime() - board.getPauseTime();
+            board.setAdditionalTime(board.getAdditionalTime() + stopTime);
+            board.setPauseTime(0);
+          }
+
+          addedPaused = false;
+
+          pauseButton.setText("☰");
         }
       }
     });
@@ -83,7 +103,6 @@ public class PlayPanel extends Panel {
         alpha = 0;
 
         remove(resetButton);
-        remove(resumeButton);
         remove(screenshotButton);
         remove(mainMenuButton);
         
@@ -95,28 +114,6 @@ public class PlayPanel extends Panel {
       }
     });
     resetButton.setText("CHƠI MỚI");
-
-    resumeButton = new Button(resetButton.getX() + resetButton.getWidth() + MARGIN, resetButton.getY(), SM_BUTTON_WIDTH, BUTTON_HEIGHT);
-    resumeButton.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        board.setPaused(false);
-        alpha = 0;
-
-        remove(resetButton);
-        remove(resumeButton);
-        remove(mainMenuButton);
-
-        if (board.getPauseTime() != 0) {
-          long stopTime = System.nanoTime() - board.getPauseTime();
-          board.setAdditionalTime(board.getAdditionalTime() + stopTime);
-          board.setPauseTime(0);
-        }
-
-        addedPaused = false;
-      }
-    });
-    resumeButton.setText("TIẾP TỤC");
 
     screenshotButton = new Button(resetButton.getX() + resetButton.getWidth() + MARGIN, resetButton.getY(), SM_BUTTON_WIDTH, BUTTON_HEIGHT);
     screenshotButton.addActionListener(new ActionListener() {
@@ -214,7 +211,7 @@ public class PlayPanel extends Panel {
 
         add(mainMenuButton);
         add(resetButton);
-        add(resumeButton);
+        add(screenshotButton);
       }
       drawPaused(g);
     }
