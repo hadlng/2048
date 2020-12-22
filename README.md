@@ -15,9 +15,15 @@ Use your __WASD__ or __arrow keys__ to move the tiles. When two tiles with the s
 
 It's a [2048](https://github.com/gabrielecirulli/2048) clone, what did you expect?
 
+## Prerequisites
+JDK __version 11 or later__. <br/>
+Install Oracle Java from [here](https://www.oracle.com/java/technologies/javase-downloads.html) or OpenJDK from [here](https://adoptopenjdk.net).
+
+## Download
+Download the executable JAR frome [here](https://github.com/hadlng/2048/releases/latest).
+
 ## Technology Stack
-- [Java](https://www.java.com/en/)
-- [OpenJDK](https://openjdk.java.net/)
+- [OpenJDK](https://openjdk.java.net/) 11
 - Microsoft's [Visual Studio Code](https://code.visualstudio.com/)
 
 Plus a bunch of awesome VSCode extensions and other goodies.
