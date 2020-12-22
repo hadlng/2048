@@ -192,7 +192,7 @@ public class PlayPanel extends Panel {
       }
       screenshot = false;
       String message = "Chụp màn hình thành công\nẢnh được lưu trong folder `screenshots`";
-      Toast toast = new Toast(message, Game.WIDTH + 250, Game.HEIGHT - 20);
+      Toast toast = new Toast(message);
       toast.showToast();
     }
 
