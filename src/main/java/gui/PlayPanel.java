@@ -111,6 +111,7 @@ public class PlayPanel extends Panel {
         addedGameOver = false;
         addedPaused = false;
 
+        pauseButton.setText("☰");
       }
     });
     resetButton.setText("CHƠI MỚI");
