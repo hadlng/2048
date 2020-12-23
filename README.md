@@ -7,10 +7,11 @@ Use your __WASD__ or __arrow keys__ to move the tiles. When two tiles with the s
 
 ## Features
 - No internet-connection is required 🐧
-- Process and high-score will be automatically saved
+- Game progress is automatically saved
 - Leaderboard
+- Easily take a screenshot and share with others
 - Endless mode (continue the game after reaching 2048)
-- Oldschool 8-bit NES sound
+- Oldschool 8-bit sounds
 - Easy to play with easy controls, a perfect time killer
 
 It's a [2048](https://github.com/gabrielecirulli/2048) clone, what did you expect?
